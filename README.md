@@ -20,3 +20,19 @@
 * May have as many default methods
 * May have as many static methods 
 * May have methods from the Object Class.
+* May be annotated with the `@FunctionalInterface` annotation.
+    * This just tells the compiler to help me determine if the interface is a functional interface or not.
+    * If not, it will throw a compiler error.
+    
+```java
+public interface Supplier<T> {
+    T get();
+}
+```
+
+* The above is a functional interface.
+* The above can be written as follows:
+
+```java
+Supplier<String> supplier = () -> "Hello";
+```
