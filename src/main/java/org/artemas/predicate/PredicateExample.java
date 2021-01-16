@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 public class PredicateExample {
     public List<String> stringNotStartingWithLetterT(List<String> strings) {
-        Predicate<String> filter = (String string) -> string.startsWith("t");
+        Predicate<String> filter = (String someString) -> someString.startsWith("t");
         strings.removeIf(filter);
 
         return strings;

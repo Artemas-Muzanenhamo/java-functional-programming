@@ -50,6 +50,16 @@ public interface Consumer<T> {
 
 * A consumer, consumes any kind of object which is defined on the parameter.
 * Has a single method called `accept(T t)` that takes any kind of object and that does not produce or return anything.
+* The above can be written as:
+
+```java
+public class ConsumerExample {
+    public void printValue(String name) {
+        Consumer<String> nameConsumer = System.out::println;
+        nameConsumer.accept(name);
+    }
+}
+```
 
 
 ### Predicate Interface
@@ -62,7 +72,20 @@ public interface Predicate<T> {
 
 * A Predicate will take some object `T` and perform a test with it to produce a boolean value `true` or `false`.
 * Used in the filtering operations in the Stream API.
+* The above can be written as the following lambda:
 
+```java
+public class PredicateExample {
+    public List<String> stringNotStartingWithLetterT(List<String> strings) {
+        Predicate<String> filter = (String someString) -> someString.startsWith("t");
+        strings.removeIf(filter);
+
+        return strings;
+    }
+}
+```
+
+### Function Interface
 ```java
 public interface Function<T, R> {
     R apply(T t);
@@ -71,3 +94,15 @@ public interface Function<T, R> {
 
 * Like the Predicate which returns a boolean value, a Function will take in any type of object and return another type of object.
 * Used in the `map()` operation in the Stream API.
+* The above can be written as: 
+
+```java
+public class FunctionExample {
+    public List<String> getNames(List<User> users) {
+        Function<User, String> userNames = User::getName;
+        return users.stream()
+                .map(userNames)
+                .collect(toList());
+    }
+}
+```
