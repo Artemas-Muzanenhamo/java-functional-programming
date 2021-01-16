@@ -44,7 +44,6 @@ public class SupplierExample {
 }
 ```
 
-
 ### Consumer Interface
 
 ```java
@@ -65,7 +64,6 @@ public class ConsumerExample {
     }
 }
 ```
-
 
 ### Predicate Interface
 
