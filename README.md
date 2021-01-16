@@ -143,3 +143,22 @@ public class IntSupplierExample {
     }
 }
 ```
+
+#### DoubleToIntFunction
+```java
+@FunctionalInterface
+public interface DoubleToIntFunction {
+    int applyAsInt(double value);
+}
+```
+
+* This can be implemented as follow: 
+
+```java
+public class DoubleToIntFunctionExample {
+    public int getIntValueBy(double input) {
+        DoubleToIntFunction intFunction = value -> (int) value * 2;
+        return intFunction.applyAsInt(input);
+    }
+}
+```
