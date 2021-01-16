@@ -124,3 +124,22 @@ public class FunctionExample {
 
 * The `java.util` package has interfaces that are tailored to with primitive types instead of wrapping types.
 * E.g. you have the `IntPredicate` that takes an `int` and returns a `boolean`.
+
+#### IntSupplier Interface
+```java
+@FunctionalInterface
+public interface IntSupplier {
+    int getAsInt();
+}
+```
+
+* This can be implemented as follows: 
+
+```java
+public class IntSupplierExample {
+    public int getValue() {
+        IntSupplier supplier = () -> 10;
+        return supplier.getAsInt();
+    }
+}
+```
