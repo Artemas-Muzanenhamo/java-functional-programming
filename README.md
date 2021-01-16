@@ -119,3 +119,8 @@ public class FunctionExample {
 * What you can put in a lambda, can be returned also in an instance of an anonymous class.
 * Lambda expressions are compiled using specific byte code instructions called `invokedynamic` introduced in Java 7.
 * Ta make lambdas even faster, you want to avoid autoboxing on lambdas (converting `int` to `INT` and auto-unboxing which is converting `INT` to `int`).
+
+### Introducing the Specialized Interfaces
+
+* The `java.util` package has interfaces that are tailored to with primitive types instead of wrapping types.
+* E.g. you have the `IntPredicate` that takes an `int` and returns a `boolean`.
