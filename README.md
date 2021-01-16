@@ -24,6 +24,8 @@
     * This just tells the compiler to help me determine if the interface is a functional interface or not.
     * If not, it will throw a compiler error.
     
+## Writing Suppliers, Consumers, Predicates and Functions
+
 ### Supplier Interface
 ```java
 public interface Supplier<T> {
@@ -109,3 +111,11 @@ public class FunctionExample {
     }
 }
 ```
+
+## Invoking a Lambda Expression on Objects and Primitive Types
+
+### How fast Are Lambda Expressions?
+
+* What you can put in a lambda, can be returned also in an instance of an anonymous class.
+* Lambda expressions are compiled using specific byte code instructions called `invokedynamic` introduced in Java 7.
+* Ta make lambdas even faster, you want to avoid autoboxing on lambdas (converting `int` to `INT` and auto-unboxing which is converting `INT` to `int`).
