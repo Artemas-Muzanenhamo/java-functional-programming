@@ -24,6 +24,7 @@
     * This just tells the compiler to help me determine if the interface is a functional interface or not.
     * If not, it will throw a compiler error.
     
+### Supplier Interface
 ```java
 public interface Supplier<T> {
     T get();
@@ -31,8 +32,42 @@ public interface Supplier<T> {
 ```
 
 * The above is a functional interface.
+* A Supplier does not take any kind of object and produces any kind of object as long as it matches the `T` type you define when you define the supplier.
 * The above can be written as follows:
 
 ```java
 Supplier<String> supplier = () -> "Hello";
 ```
+
+
+### Consumer Interface
+
+```java
+public interface Consumer<T> {
+    void accept(T t);
+}
+```
+
+* A consumer, consumes any kind of object which is defined on the parameter.
+* Has a single method called `accept(T t)` that takes any kind of object and that does not produce or return anything.
+
+
+### Predicate Interface
+
+```java
+public interface Predicate<T> {
+    boolean test(T t);
+}
+```
+
+* A Predicate will take some object `T` and perform a test with it to produce a boolean value `true` or `false`.
+* Used in the filtering operations in the Stream API.
+
+```java
+public interface Function<T, R> {
+    R apply(T t);
+}
+```
+
+* Like the Predicate which returns a boolean value, a Function will take in any type of object and return another type of object.
+* Used in the `map()` operation in the Stream API.
