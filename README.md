@@ -33,10 +33,15 @@ public interface Supplier<T> {
 
 * The above is a functional interface.
 * A Supplier does not take any kind of object and produces any kind of object as long as it matches the `T` type you define when you define the supplier.
-* The above can be written as follows:
+* The above can be implemented as follows:
 
 ```java
-Supplier<String> supplier = () -> "Hello";
+public class SupplierExample {
+    public String getGreeting() {
+        Supplier<String> supplier = () -> "Hello Artemas";
+        return supplier.get();
+    }
+}
 ```
 
 
@@ -50,7 +55,7 @@ public interface Consumer<T> {
 
 * A consumer, consumes any kind of object which is defined on the parameter.
 * Has a single method called `accept(T t)` that takes any kind of object and that does not produce or return anything.
-* The above can be written as:
+* The above can be implemented as:
 
 ```java
 public class ConsumerExample {
@@ -72,7 +77,7 @@ public interface Predicate<T> {
 
 * A Predicate will take some object `T` and perform a test with it to produce a boolean value `true` or `false`.
 * Used in the filtering operations in the Stream API.
-* The above can be written as the following lambda:
+* The above can be implemented as the following lambda:
 
 ```java
 public class PredicateExample {
@@ -94,7 +99,7 @@ public interface Function<T, R> {
 
 * Like the Predicate which returns a boolean value, a Function will take in any type of object and return another type of object.
 * Used in the `map()` operation in the Stream API.
-* The above can be written as: 
+* The above can be implemented as: 
 
 ```java
 public class FunctionExample {
